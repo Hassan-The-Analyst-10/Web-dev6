@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <!-- =================================
+             SIDEBAR
+             ================================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h2>SpendWise</h2>
+
+                <p>
+                    Budget Tracker
+                </p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="#" class="nav-item active">
+                    Dashboard
+                </a>
+
+                <a href="#expense-form-section" class="nav-item">
+                    Add Expense
+                </a>
+
+                <a href="#expenses-section" class="nav-item">
+                    Expenses
+                </a>
+
+                <a href="#" class="nav-item">
+                    Budget
+                </a>
+
+                <a href="#" class="nav-item">
+                    Savings
+                </a>
+
+                <a href="#" class="nav-item">
+                    Reports
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <p>
+                    Personal Finance
+                </p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================
+             MAIN CONTENT
+             ================================= -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 HEADER
+                 ================================= -->
+
+            <header class="dashboard-header">
+
+                <div class="header-title">
+
+                    <h1>
+                        SpendWise Dashboard
+                    </h1>
+
+                    <p>
+                        Manage your budget and track your expenses.
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        HH
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Hassan
+                        </strong>
+
+                        <span>
+                            Account Owner
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================
+                 BUDGET INPUT
+                 ================================= -->
+
+            <section class="card budget-section">
+
+                <div>
+
+                    <h2>
+                        Set Monthly Budget
+                    </h2>
+
+                    <p>
+                        Enter the amount you want to spend this month.
+                    </p>
+
+                </div>
+
+
+                <form id="budget-form" class="budget-form">
+
+                    <label for="budget-input">
+                        Monthly Budget
+                    </label>
+
+                    <input
+                        type="number"
+                        id="budget-input"
+                        placeholder="Enter budget"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                    <button type="submit">
+                        Set Budget
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================
+                 SUMMARY CARDS
+                 ================================= -->
+
+            <section class="summary">
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Budget
+                    </span>
+
+                    <strong id="budget-display">
+                        $0.00
+                    </strong>
+
+                    <small>
+                        Monthly budget
+                    </small>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Expenses
+                    </span>
+
+                    <strong id="expense-display">
+                        $0.00
+                    </strong>
+
+                    <small>
+                        Current spending
+                    </small>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Remaining Balance
+                    </span>
+
+                    <strong id="balance-display">
+                        $0.00
+                    </strong>
+
+                    <small id="budget-status">
+                        Set your budget
+                    </small>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 BUDGET MESSAGE
+                 ================================= -->
+
+            <div
+                id="message"
+                class="message"
+                role="status"
+                aria-live="polite"
+            >
+            </div>
+
+
+
+            <!-- =================================
+                 ADD EXPENSE FORM
+                 ================================= -->
+
+            <section
+                class="card"
+                id="expense-form-section"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Add Expense
+                        </h2>
+
+                        <p>
+                            Record a new expense.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="expense-form">
+
+
+                    <div class="form-group">
+
+                        <label for="expense-name">
+                            Expense Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expense-name"
+                            placeholder="e.g. Groceries"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="expense-amount">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="expense-amount"
+                            placeholder="e.g. 45"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="expense-category">
+                            Category
+                        </label>
+
+                        <select
+                            id="expense-category"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Transport">
+                                Transport
+                            </option>
+
+                            <option value="Rent">
+                                Rent
+                            </option>
+
+                            <option value="Entertainment">
+                                Entertainment
+                            </option>
+
+                            <option value="Savings">
+                                Savings
+                            </option>
+
+                            <option value="Utilities">
+                                Utilities
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="expense-date">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expense-date"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Add Expense
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================
+                 EXPENSE TABLE
+                 ================================= -->
+
+            <section
+                class="card"
+                id="expenses-section"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Expense Records
+                        </h2>
+
+                        <p>
+                            Your current expense records.
+                        </p>
+
+                    </div>
+
+                    <span id="expense-count">
+                        0 expenses
+                    </span>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Name
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="expense-table-body">
+
+                            <!-- JavaScript adds records here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p
+                    id="empty-state"
+                    class="empty-state"
+                >
+                    No expenses recorded yet.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CATEGORY CARDS
+                 ================================= -->
+
+            <section class="categories">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Expense Categories
+                        </h2>
+
+                        <p>
+                            Common spending categories.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category-grid">
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                🍔
+                            </div>
+
+                            <span>
+                                Food
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Food
+                            </h3>
+
+                            <p>
+                                Groceries and meals
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                🚌
+                            </div>
+
+                            <span>
+                                Transport
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Transport
+                            </h3>
+
+                            <p>
+                                Bus, fuel and travel
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                🏠
+                            </div>
+
+                            <span>
+                                Rent
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Rent
+                            </h3>
+
+                            <p>
+                                Monthly housing cost
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                🎬
+                            </div>
+
+                            <span>
+                                Entertainment
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Entertainment
+                            </h3>
+
+                            <p>
+                                Movies and subscriptions
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                💰
+                            </div>
+
+                            <span>
+                                Savings
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Savings
+                            </h3>
+
+                            <p>
+                                Monthly savings goals
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article
+                        class="category-card"
+                        tabindex="0"
+                    >
+
+                        <div class="card-top">
+
+                            <div class="category-icon">
+                                💡
+                            </div>
+
+                            <span>
+                                Utilities
+                            </span>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>
+                                Utilities
+                            </h3>
+
+                            <p>
+                                Electricity and internet
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

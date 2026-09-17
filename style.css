@@ -1,0 +1,855 @@
+:root {
+    --brand-color: #2563eb;
+    --brand-dark: #1d4ed8;
+
+    --accent-color: #16a34a;
+    --danger-color: #dc2626;
+    --warning-color: #d97706;
+
+    --background-color: #f1f5f9;
+    --surface-color: #ffffff;
+
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+
+    --border-color: #e2e8f0;
+
+    --sidebar-color: #ffffff;
+
+    --success-background: #dcfce7;
+    --danger-background: #fee2e2;
+    --warning-background: #fef3c7;
+
+    --shadow:
+        0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ========================================
+   GENERAL STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background-color: var(--background-color);
+
+    color: var(--primary-text);
+
+    font-family: "Roboto", sans-serif;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   DASHBOARD GRID
+   ======================================== */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+.sidebar {
+    background-color: var(--sidebar-color);
+
+    padding: 25px 18px;
+
+    border-right: 1px solid var(--border-color);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.logo {
+    margin-bottom: 35px;
+}
+
+
+.logo h2 {
+    margin: 0;
+
+    color: var(--brand-color);
+
+    font-size: 24px;
+}
+
+
+.logo p {
+    margin: 4px 0 0;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.nav-item {
+    padding: 12px 15px;
+
+    color: var(--secondary-text);
+
+    border-radius: 8px;
+
+    font-weight: 500;
+
+    transition: 200ms ease;
+}
+
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: var(--brand-color);
+
+    color: white;
+}
+
+
+.sidebar-footer {
+    margin-top: auto;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.main-content {
+    min-width: 0;
+
+    padding: 30px;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.dashboard-header {
+    margin-bottom: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.header-title h1 {
+    margin: 0 0 5px;
+
+    font-size: 30px;
+}
+
+
+.header-title p {
+    margin: 0;
+
+    color: var(--secondary-text);
+}
+
+
+.user-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.user-info strong,
+.user-info span {
+    display: block;
+}
+
+
+.user-info span {
+    margin-top: 3px;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+.user-avatar {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--brand-color);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   CARD
+   ======================================== */
+
+.card {
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* ========================================
+   BUDGET SECTION
+   ======================================== */
+
+.budget-section {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+}
+
+
+.budget-section h2 {
+    margin: 0 0 5px;
+}
+
+
+.budget-section p {
+    margin: 0;
+
+    color: var(--secondary-text);
+}
+
+
+.budget-form {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 10px;
+}
+
+
+.budget-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 500;
+}
+
+
+.budget-form input {
+    width: 180px;
+}
+
+
+/* ========================================
+   SUMMARY CARDS
+   ======================================== */
+
+.summary {
+    margin-bottom: 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.summary-card {
+    padding: 22px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.summary-card span {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+}
+
+
+.summary-card strong {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+}
+
+
+.summary-card small {
+    color: var(--accent-color);
+}
+
+
+/* ========================================
+   GENERAL FORM
+   ======================================== */
+
+#expense-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+    font-weight: 500;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background-color: var(--surface-color);
+
+    color: var(--primary-text);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    font-family: "Roboto", sans-serif;
+
+    font-size: 15px;
+}
+
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--brand-color);
+
+    border-color: var(--brand-color);
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+button {
+    padding: 12px 20px;
+
+    background-color: var(--brand-color);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 200ms ease,
+        transform 200ms ease;
+}
+
+
+button:hover {
+    background-color: var(--brand-dark);
+
+    transform: translateY(-2px);
+}
+
+
+button:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+}
+
+
+.primary-button {
+    align-self: end;
+}
+
+
+/* ========================================
+   SECTION HEADINGS
+   ======================================== */
+
+.section-heading {
+    margin-bottom: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.section-heading h2 {
+    margin: 0 0 5px;
+}
+
+
+.section-heading p {
+    margin: 0;
+
+    color: var(--secondary-text);
+}
+
+
+#expense-count {
+    padding: 6px 10px;
+
+    background-color: var(--background-color);
+
+    color: var(--secondary-text);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   MESSAGE
+   ======================================== */
+
+.message {
+    margin-bottom: 25px;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    font-weight: 500;
+
+    display: none;
+}
+
+
+.message.show {
+    display: block;
+}
+
+
+.message.success {
+    background-color: var(--success-background);
+
+    color: var(--accent-color);
+}
+
+
+.message.warning {
+    background-color: var(--warning-background);
+
+    color: var(--warning-color);
+}
+
+
+.message.danger {
+    background-color: var(--danger-background);
+
+    color: var(--danger-color);
+}
+
+
+/* ========================================
+   EXPENSE TABLE
+   ======================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+thead {
+    background-color: var(--brand-color);
+
+    color: white;
+}
+
+
+th,
+td {
+    padding: 13px;
+
+    border: 1px solid var(--border-color);
+
+    text-align: left;
+}
+
+
+th {
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+
+tbody tr:hover {
+    background-color: var(--border-color);
+}
+
+
+.empty-state {
+    margin: 20px 0 0;
+
+    color: var(--secondary-text);
+
+    text-align: center;
+}
+
+
+/* ========================================
+   CATEGORY GRID
+   ======================================== */
+
+.categories {
+    margin-top: 10px;
+}
+
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   CATEGORY CARDS
+   ======================================== */
+
+.category-card {
+    padding: 22px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    outline: none;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+
+.category-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.14);
+}
+
+
+.category-card:focus {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.25),
+        0 8px 20px rgba(15, 23, 42, 0.14);
+}
+
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.category-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--background-color);
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+
+.card-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.card-content h3 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+.card-content p {
+    margin: 0;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sidebar {
+        padding: 18px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border-color);
+    }
+
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+
+    .navigation {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .nav-item {
+        padding: 9px 12px;
+    }
+
+
+    .main-content {
+        padding: 20px;
+    }
+
+
+    .dashboard-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .budget-section {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .budget-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .budget-form input {
+        width: 100%;
+    }
+
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    #expense-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        --brand-color: #60a5fa;
+
+        --brand-dark: #3b82f6;
+
+        --accent-color: #4ade80;
+
+        --danger-color: #f87171;
+
+        --warning-color: #fbbf24;
+
+        --background-color: #0f172a;
+
+        --surface-color: #1e293b;
+
+        --primary-text: #f8fafc;
+
+        --secondary-text: #94a3b8;
+
+        --border-color: #334155;
+
+        --sidebar-color: #1e293b;
+
+        --success-background: #14532d;
+
+        --danger-background: #7f1d1d;
+
+        --warning-background: #78350f;
+
+        --shadow:
+            0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
